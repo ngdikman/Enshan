@@ -15,7 +15,7 @@ def run(*arg):
     s.headers.update({'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:85.0) Gecko/20100101 Firefox/85.0'})
 
     # 签到
-    url = "https://www.right.com.cn/forum/home.php?mod=spacecp&ac=usergroup"
+    url = "https://www.right.com.cn/forum/home.php?mod=spacecp&ac=credit&op=log&suboperation=creditrulelog"
     headers = {
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:85.0) Gecko/20100101 Firefox/85.0',
         'Connection' : 'keep-alive',
