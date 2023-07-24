@@ -27,7 +27,7 @@ def run(*arg):
         'Cookie': cookie
     }
     try:
-        r = s.get(url, headers=headers, timeout=120)
+        r = s.get(url, headers=headers, timeout=60)
         # print(r.text)
         if '每天登录' in r.text:
             h = etree.HTML(r.text)
