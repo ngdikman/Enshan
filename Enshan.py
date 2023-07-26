@@ -12,18 +12,18 @@ cookie = os.environ.get("cookie_enshan")
 def run(*arg):
     msg = ""
     s = requests.Session()
-    s.headers.update({'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:85.0) Gecko/20100101 Firefox/85.0'})
+    s.headers.update({'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.118 YaBrowser/15.4.2272.3649 (beta) Yowser/2.0 Safari/537.36'})
 
     # 签到
-    url = "https://www.right.com.cn/forum/home.php?mod=spacecp&ac=credit&op=log&suboperation=creditrulelog"
+    url = "https://www.right.com.cn/forum/home.php?mod=spacecp&ac=usergroup"
     headers = {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:85.0) Gecko/20100101 Firefox/85.0',
+        'User-Agent': 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.118 YaBrowser/15.4.2272.3649 (beta) Yowser/2.0 Safari/537.36',
         'Connection' : 'keep-alive',
         'Host' : 'www.right.com.cn',
         'Upgrade-Insecure-Requests' : '1',
         'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
-        'Accept-Language' : 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
-        'Accept-Encoding' : 'gzip, deflate, br',
+        'Accept-Language' : 'zh-CN,zh-TW;q=0.8,en;q=0.6',
+        'Accept-Encoding' : 'gzip, deflate, sdch',
         'Cookie': cookie
     }
     try:
