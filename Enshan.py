@@ -1,5 +1,5 @@
 import requests, json, time, os, sys
-sys.path.append('.')
+sys.path.append('..')
 requests.packages.urllib3.disable_warnings()
 try:
     from pusher import pusher
@@ -15,7 +15,7 @@ def run(*arg):
     s.headers.update({'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:85.0) Gecko/20100101 Firefox/85.0'})
 
     # 签到
-    url = "https://www.right.com.cn/forum/home.php?mod=spacecp&ac=usergroup"
+    url = "https://www.right.com.cn/forum/home.php?mod=spacecp&ac=credit&op=log&suboperation=creditrulelog"
     headers = {
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:85.0) Gecko/20100101 Firefox/85.0',
         'Connection' : 'keep-alive',
@@ -27,7 +27,7 @@ def run(*arg):
         'Cookie': cookie
     }
     try:
-        r = s.get(url, headers=headers, timeout=60)
+        r = s.get(url, headers=headers, timeout=120)
         # print(r.text)
         if '每天登录' in r.text:
             h = etree.HTML(r.text)
@@ -38,6 +38,7 @@ def run(*arg):
             pusher(msg)
     except:
         msg = '无法正常连接到网站，请尝试改变网络环境，试下本地能不能跑脚本，或者换几个时间点执行脚本'
+        print(msg)
     return msg + '\n'
 
 def main(*arg):
