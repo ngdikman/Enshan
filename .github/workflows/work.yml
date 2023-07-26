@@ -2,7 +2,7 @@ name: 'run'
 
 on:
   schedule:
-    - cron: '0 22 * * *'
+    - cron: '30 */8 * * *'
   workflow_dispatch:
 
 jobs:
@@ -23,4 +23,3 @@ jobs:
           cookie_enshan: ${{ secrets.cookie_enshan }}
         run: |
           python3 ../Enshan/Enshan.py
-          
